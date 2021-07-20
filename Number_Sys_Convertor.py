@@ -1,7 +1,5 @@
 #Write a program to convert an unsigned number in one radix ‘A’ to the equivalent number in another radix ‘B’, where  A and B can be any positive integer(vice versa of radix Base)
 
-print(" Choices: \n a- Decimal to others\n b- Binary to others\n c- Hexadecimal to others\n c- Octal to others.\n e- exit")
-
 hex_values=['0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F']
 
 def decimal_conv(n,a):
@@ -46,12 +44,13 @@ def oct_conv(num,n):
     
 
 while True:
-    ch=input("Enter choice: ")
-    if ch not in ['a','b','c','d','e']:
+    print(" Choices: \n 1- Decimal to others\n 2- Binary to others\n 3- Hexadecimal to others\n 4- Octal to others.\n 5- exit")
+    ch=int(input("Enter choice: "))
+    if ch not in [1,2,3,4,5]:
         print("Enter valid options only")
         continue
 
-    if ch=='a':
+    if ch==1:
         try:
             num=int(input("Enter number in decimal form: "))
         except ValueError:
@@ -71,7 +70,7 @@ while True:
         print("Hexadecimal form: ",hex_form,"\n")
         print("---------------------------------\n")
         
-    elif ch=='b':
+    elif ch==2:
        try: 
         binarry=input("Enter number in binary form: ")
         for i in binarry:
@@ -94,7 +93,7 @@ while True:
        except:
            None
         
-    elif ch=='c':
+    elif ch==3:
        try:
         hexa=input("Enter number in hexadecimal form: ")
         
@@ -113,7 +112,7 @@ while True:
        except:
            print("Invaid hexadecimal format")
         
-    elif ch=='d':
+    elif ch==4:
        try:
         octa=input("Enter number in octal form: ")
         
@@ -134,6 +133,6 @@ while True:
         
         
     
-    elif ch=='e':
+    elif ch==5:
         print("Program Terminated, HEHE")
         break
